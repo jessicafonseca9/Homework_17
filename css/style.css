@@ -2,46 +2,96 @@
 font-family: 'Montserrat', sans-serif;
 font-family: 'Poppins', sans-serif;
 
-.body {
-  display: grid;
-  
-
   .logo { 
-  background-color: white;
   background-repeat: no-repeat;
   background-position: left;
 }
 
 
-
 .hammy {
-  background: white;
   background-repeat: no-repeat;
   background-position: right;
 }
 
-.wrapper {
+.container {
   display: grid;
-  grid-template-columns:
-  800px 1000px;
-  background-color: #F2EBDD;
+  grid-template-columns: 4fr 4fr;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  grid-template-areas:
+  "header header"
+  ". heroArea ."
+  "mainContent mainContent mainContent"
+  ". . socialFooter"
+  ". mainFooter ."
+  ". lowerContent .";
+  grid-gap: 5px;
 }
 
-.introHeading {
+.container > div {
+  background: #F2EBDD ;
+  border: 1px black solid;
+}
+
+.header {
+  grid-area: header;
+  background-color: orange;
+}
+
+.heroArea {
+ grid-area: heroArea;
+ background-color: lightcoral;
+}
+
+.topLeft {
     color: black;
     font-family: Poppins;
     size: 91px;
     font-weight: bold;
+    background-color: paleturquoise;
 
-.firstParagraph {
+.topRight {
       color: black;
       size: 35px;
       font-weight: medium;
+}
 
+.buttonResume {
+    background-color:#7ca89f;
+    border-radius:6px;
+    display:inline-block;
+    color:#ffffff;
+    font-family:'Poppins'sans-serif;
+    font-size:26px;
+    padding:13px 32px;
+    text-decoration:none;
+}
 
-@media screen and (max-width:600px)
+.mainContent {
+  grid-area: mainContent;
+  background-color: pink;
+}
 
+.buttonLearn {
+  background-color:#7ca89f;
+  border-radius:6px;
+  display:inline-block;
+  color:#ffffff;
+  font-family:'Poppins'sans-serif;
+  font-size:26px;
+  padding:13px 32px;
+  text-decoration:none;
+}
 
+.lowerContent {
+  grid-area: lowerContent;
+  background-color: lightgoldenrodyellow;
+  font-family: "poppins" sans-serif;
+}
+
+.socialFooter {
+  grid-area: socialFooter;
+  background-color: lightslategrey; 
+}
 
 .social-icons {
    display: flex;
@@ -60,3 +110,8 @@ font-family: 'Poppins', sans-serif;
    height:25px;
    margin-right: 20px;
  }
+
+ .mainFooter {
+  grid-area: mainFooter;
+  background-color: lightslategrey; 
+}
